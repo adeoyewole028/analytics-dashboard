@@ -1,37 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Analytics Dashboard
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is an analytics dashboard application designed to provide users with insights and data visualization. It offers features such as:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Visual representation of data through charts, graphs, and tables.
+- Responsive design for optimal viewing across devices.
+- Modern user interface focusing on simplicity and clarity.
+- Theme support for light and dark modes.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: A React framework for building server-rendered and statically generated web applications.
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for styling components.
+- **Material-UI**: A React UI framework following Google's Material Design guidelines.
+- **NextUI**: A React UI library with customizable components.
+- **ApexCharts**: A JavaScript charting library for creating interactive charts and graphs.
+- **Framer Motion**: A library for adding animations to React applications.
+- **TypeScript**: A statically typed superset of JavaScript for enhanced developer productivity.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Development Tools
 
-## Learn More
+- **ESLint**: A static code analysis tool for identifying patterns in JavaScript code.
+- **Tailwind CSS and PostCSS**: Tools for styling and transforming CSS with JavaScript plugins.
+- **TypeScript Definitions**: Type definitions for project dependencies to enhance code readability and maintainability.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository.
+2. Install dependencies with `npm install`.
+3. Run the development server with `npm run dev`.
+4. Build the project with `npm run build`.
+5. Start the server with `npm start`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# analytics-dashboard
+This project is licensed under the [MIT License](LICENSE).
