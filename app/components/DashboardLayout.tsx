@@ -17,7 +17,6 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 
-import { Switch } from "@mui/material";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -38,6 +37,7 @@ import {
   UserIcon,
   SettingsIcon,
   DashboardIcon,
+  DashboardDarkIcon,
   LogoIcon,
   BoxIcon,
   AnalyticsIcon,
@@ -45,6 +45,7 @@ import {
   LightIcon,
   ArrowRightIcon,
   BellIcon,
+  ArrowDown,
 } from "../../components/icons";
 import { User } from "@nextui-org/react";
 import { useTheme as useThemes } from "next-themes";
@@ -95,7 +96,7 @@ const closedMixin = (theme: Theme): CSSObject => ({
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
-  justifyContent: "flex-end",
+  justifyContent: "flex-start",
   padding: theme.spacing(0, 1),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
@@ -308,6 +309,7 @@ export default function DashboardLayout({
   const topNavItems = [
     {
       icon: <DashboardIcon />,
+      darkIcon: <DashboardDarkIcon />,
     },
     {
       icon: <AnalyticsIcon />,
@@ -348,7 +350,10 @@ export default function DashboardLayout({
   ];
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box
+      sx={{ display: "flex" }}
+      className="dark:bg-background dark:text-foreground"
+    >
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -400,14 +405,14 @@ export default function DashboardLayout({
                 container
                 direction="row"
                 justifyContent="space-between"
-                alignItems="flex-start"
+                alignItems="flex-center"
               >
                 <Grid item xs={6} sm={6}>
                   <Box
                     sx={{
                       display: "flex",
                       alignItems: "center",
-                      justifyContent: "space-between",
+                      justifyContent: { md: "space-between" },
                     }}
                   >
                     <Box
@@ -417,9 +422,19 @@ export default function DashboardLayout({
                         justifyContent: "flex-start",
                       }}
                     >
-                      <IconButton>
-                        <CalendarIcon />
-                      </IconButton>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "flex-start",
+                          mt: { xs: 2, md: 0 },
+                          mr: { xs: 0, md: 2 },
+                        }}
+                      >
+                        <CalendarIcon
+                          color={colorTheme === "dark" ? "white" : "black"}
+                        />
+                      </Box>
                       <Typography
                         variant="caption"
                         noWrap
@@ -430,8 +445,10 @@ export default function DashboardLayout({
                       </Typography>
                     </Box>
 
-                    <IconButton>
-                      <BellIcon />
+                    <IconButton sx={{ display: { xs: "none", sm: "block" } }}>
+                      <BellIcon
+                        color={colorTheme === "dark" ? "white" : "#0D062D"}
+                      />
                     </IconButton>
                   </Box>
                 </Grid>
@@ -455,15 +472,21 @@ export default function DashboardLayout({
                         borderRadius: "50px",
                         p: 0.5,
                         px: 2.5,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        width: "80%",
                       }}
                     >
                       <User
                         name="Justin Bergson"
                         description="Justin@gmail.com"
                         avatarProps={{
-                          src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+                          src: "/justin.png",
                         }}
                       />
+                      <span>
+                      <ArrowDown /></span>
                     </IconButton>
                   </Box>
                   <Box
@@ -483,7 +506,7 @@ export default function DashboardLayout({
                       <User
                         name=""
                         avatarProps={{
-                          src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+                          src: "/justin.png",
                         }}
                       />
                     </IconButton>
@@ -497,22 +520,16 @@ export default function DashboardLayout({
       {renderMobileMenu}
       {renderMenu}
       <Drawer variant="permanent" open={open}>
-        <Box
-          sx={{
-            backgroundColor: "#F7F8FA",
-          }}
-          className="dark:bg-background dark:text-foreground"
-        >
+        <Box className="dark:bg-background bg-[#F7F8FA] dark:text-foreground h-screen">
           <DrawerHeader
             sx={{
               display: "flex",
               alignItems: "center",
               justifyContent: "flex-start",
-              px: [1],
             }}
           >
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === "rtl" ? <LogoIcon /> : <LogoIcon />}
+            <IconButton onClick={handleDrawerClose} className="ml-5">
+              <LogoIcon />
             </IconButton>
           </DrawerHeader>
           <Divider />
@@ -534,7 +551,10 @@ export default function DashboardLayout({
                     }}
                     className="dark:text-foreground"
                   >
-                    {item.icon}
+                    {item.darkIcon && colorTheme === "dark"
+                      ? item.darkIcon
+                      : item.icon}
+                    {/* {item.icon} */}
                   </ListItemIcon>
                 </ListItemButton>
               </ListItem>

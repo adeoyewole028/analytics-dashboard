@@ -6,8 +6,10 @@ import { userColumn, users } from "@/config/data";
 import { Button } from "@nextui-org/button";
 import { Skeleton } from "@nextui-org/react";
 import { ViewIcon } from "../icons";
+import { useTheme } from "next-themes";
 
 export default function DashboardTable() {
+  const { theme } = useTheme();
   const [loading, setLoading] = useState(true);
   const actionButtons = [
     {
@@ -15,7 +17,7 @@ export default function DashboardTable() {
       onClick: (val: any) => {
         console.log(val);
       },
-      icon: <ViewIcon />,
+      icon: <ViewIcon color={theme === "dark" ? "white" : "#292D32"} />,
     },
   ];
 

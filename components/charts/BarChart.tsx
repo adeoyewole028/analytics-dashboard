@@ -58,7 +58,7 @@ const BarChart = () => {
       "JAN",
       "FEB",
       "MAR",
-      "APRIL",
+      "APR",
       "MAY",
       "JUN",
       "JUL",
@@ -148,7 +148,7 @@ const BarChart = () => {
 
     return (
       <div className="relative dark:bg-light dark:text-white">
-        <div className="absolute -top-3 right-0 p-3 z-10">
+        <div className="absolute -top-5 right-0 p-3 z-10">
           <Box
             sx={{
               display: "flex",
@@ -156,7 +156,7 @@ const BarChart = () => {
               "& > :not(style)": { m: 1 },
             }}
           >
-            <label htmlFor="" className="w-full">
+            <label htmlFor="sort_by" className="w-full text-sm hidden lg:block">
               Sort by:
             </label>
             <Select
@@ -187,7 +187,6 @@ const BarChart = () => {
           series={series}
           type="bar"
           height={350}
-          className="dark:bg-light dark:text-white"
         />
       </div>
     );

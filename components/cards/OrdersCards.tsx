@@ -32,7 +32,7 @@ const PeriodType = [
 ];
 export default function OverviewCard({ content }: { content: any }) {
   return (
-    <Card className="max-w-[400px] bg-white text-black p-1.5 dark:bg-background dark:text-foreground">
+    <Card className=" max-w-md sm:max-w-xs md:max-w-7xl bg-white text-black p-1.5 dark:bg-background dark:text-foreground">
       <CardHeader className="flex gap-3 p-1">
         <div className="flex items-center justify-between w-full">
           <div>{content.icon}</div>
@@ -45,7 +45,7 @@ export default function OverviewCard({ content }: { content: any }) {
         </h2>
         <p className="font-semibold text-2xl text-[#3A3F51]">{content.value}</p>
       </CardBody>
-      <CardFooter className="p-2 font-semibold text-sm">
+      <CardFooter className="p-2 flex flex-wrap font-semibold text-sm">
         <Chip
           color={content.trend ? "success" : "danger"}
           variant="flat"
@@ -54,10 +54,10 @@ export default function OverviewCard({ content }: { content: any }) {
         >
           {content.percentage}%
         </Chip>
-        <span className="text-[#606060] font-normal text-sm ml-auto">
+        <div className="text-[#606060] font-normal text-sm ml-auto">
           {" "}
           vs. previous month
-        </span>
+        </div>
       </CardFooter>
     </Card>
   );

@@ -13,7 +13,7 @@ const users = [
     date: "Nov 15, 2023",
     status: "paid",
     amount: "80,000",
-    avatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    avatar: "/marcus.png",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const users = [
     date: "Nov 15, 2023",
     status: "refund",
     amount: "150,000",
-    avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
+    avatar: "/jaydon.png",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const users = [
     date: "Nov 15, 2023",
     status: "paid",
     amount: "87,000",
-    avatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+    avatar: "/corey.png",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const users = [
     date: "Nov 15, 2023",
     status: "refund",
     amount: "100,000",
-    avatar: "https://i.pravatar.cc/150?u=a048581f4e29026701d",
+    avatar: "/cooper.png",
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const users = [
     date: "Nov 15, 2023",
     status: "paid",
     amount: "78,000",
-    avatar: "https://i.pravatar.cc/150?u=a092581d4ef9026700d",
+    avatar: "/philip.png",
   },
 ];
 

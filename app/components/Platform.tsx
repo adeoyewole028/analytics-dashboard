@@ -1,8 +1,8 @@
 import React from "react";
-import ListingCard from "@/components/cards/ListingCard";
+import PlatformCard from "@/components/cards/PlatformCards";
 import { Button, Card } from "@nextui-org/react";
 
-const productList = [
+const platformList = [
   {
     id: 1,
     name: "Book Bazaar",
@@ -11,7 +11,7 @@ const productList = [
     class: {
       base: "max-w-md",
       track: "drop-shadow-md border border-default",
-      indicator: "bg-[#6160DC]",
+      indicator: "!bg-[#6160DC]",
     },
   },
   {
@@ -22,7 +22,7 @@ const productList = [
     class: {
       base: "max-w-md",
       track: "drop-shadow-md border border-default",
-      indicator: "bg-[#54C5EB]",
+      indicator: "!bg-[#54C5EB]",
     },
   },
   {
@@ -33,7 +33,7 @@ const productList = [
     class: {
       base: "max-w-md",
       track: "drop-shadow-md border border-default",
-      indicator: "bg-[#FFB74A]",
+      indicator: "!bg-[#FFB74A]",
     },
   },
   {
@@ -44,7 +44,7 @@ const productList = [
     class: {
       base: "max-w-md",
       track: "drop-shadow-md border border-default",
-      indicator: "bg-[#FF4A55]",
+      indicator: "!bg-[#FF4A55]",
     },
   },
 ];
@@ -63,9 +63,9 @@ export default function Listing() {
         </div>
       </div>
       <div className="flex flex-col gap-0 h-[366px] overflow-y-auto scrollbar">
-        {productList.map((item) => (
+        {platformList.map((item) => (
           <div key={item.id}>
-            <ListingCard key={item.id} content={item} />
+            <PlatformCard key={item.id} content={item} />
           </div>
         ))}
       </div>

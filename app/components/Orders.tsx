@@ -1,5 +1,5 @@
 import React from "react";
-import OverviewCard from "@/components/cards/OverviewCard";
+import OrderCard from "@/components/cards/OrdersCards";
 import {
   IncomeIcon,
   OrderIcon,
@@ -8,7 +8,7 @@ import {
   GreenGraphIcon,
   RedGraphIcon,
 } from "@/components/icons";
-type OverviewDataItem = {
+type OrderDataItem = {
   title: string;
   value: number | string;
   percentage: number;
@@ -18,7 +18,7 @@ type OverviewDataItem = {
   trend: boolean;
 };
 
-const overviewData: OverviewDataItem[] = [
+const orderData: OrderDataItem[] = [
   {
     title: "Total Order",
     value: 350,
@@ -36,7 +36,6 @@ const overviewData: OverviewDataItem[] = [
     icon: <RefundIcon />,
     graph: <RedGraphIcon />,
     trend: false,
-
   },
   {
     title: "Average Sales",
@@ -59,11 +58,11 @@ const overviewData: OverviewDataItem[] = [
 ];
 export default function Orders() {
   return (
-    <div>
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-2">
-        {overviewData.map((item) => (
+    <div className="mx-auto max-w-7xl">
+      <div className="grid  gap-4 lg:grid-cols-2">
+        {orderData.map((item) => (
           <div key={item.title}>
-            <OverviewCard key={item.title} content={item} />
+            <OrderCard key={item.title} content={item} />
           </div>
         ))}
       </div>
